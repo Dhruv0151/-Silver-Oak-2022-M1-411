@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration from</title>
+
+	<style type="text/css">
+		
+		span
+		{
+			color:red;
+			font-style: italic;
+
+		}
+		form
+		{
+		padding-top:15px;
+		margin-left:50px;
+		width:130%;
+		
+		height:150%;
+		}
+		h1
+		{
+		padding-top:15px;
+		padding-bottom:15px;
+		text-align:center;
+		}
+		h2
+		{
+		padding-top:15px;
+		padding-bottom:15px;
+		
+		}
+		header
+		{
+		background-image:url(img_2.jpg);
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center;
+		}
+		body
+		{
+		height:150%;
+		}
+		img
+		{
+		height:100%;
+		width:100%;
+		}
+		label
+		{
+		font-size:17px;
+		font-family:"lucida console";
+		text-align:left;
+
+		}
+		#main
+		{
+		
+		width:500px;
+		margin:0px 0px 0px 500px;
+		font-size:18px;
+		background-color:blue;
+		border:1px solid black;
+		color:white;
+		border-radius:10px;
+		opacity:0.9;
+		
+		}
+		#uname,#pass,#mail,#cpass,#city,#pincode,#country,#comment
+		{
+		width:300px;
+		border:none;
+		border-radius:3px;
+		outline:0%;
+		padding:7px;
+		}
+		#phno
+		{
+		width:60px;
+		padding:7px;
+		border:none;
+		border-radius:3px;
+		outline:0;
+		}
+		#phno1
+		{
+		width:230px;
+		padding:7px;
+		border:none;
+		outline:0;
+		margin-left:10px;
+	   }
+	   #btns
+       {
+		width:200px;
+		padding:7px;
+		font-size:16px;
+		font-family:sans-serif;
+		font-style:italic;
+		font-weight:600px;
+		border:none;
+		border-radius:3px;
+		outline:0;
+     }
+	 h2
+	 {
+		padding-top:0px;
+		padding-bottom:0px;
+	}
+	#reset
+{
+		width:150px;
+		padding:7px;
+		font-size:16px;
+		font-weight:600px;
+		border:none;
+		border-radius:3px;
+		outline:0;
+		margin-left:60px;
+}
+	</style>
+</head>
+<body>
+
+<header>
+<h1>Registration Form</h1>
+<div id="main">
+<form action="#" onsubmit="return validation()">
+	<h2>Registration here</h2>
+			
+			<label>User Name:</label><br>
+	<input type="text" name="uname" id="uname" placeholder="Enter your name:"><br>
+	<span id="error_name"></span><br>
+	<label>Password:</label><br>
+	<input type="password" name="pass" id="pass" placeholder="Enter password:"><br>
+	<span id="error_pass"></span><br>
+	<label>Conform password:</label><br>
+	<input type="password" name="cpass" id="cpass" placeholder="Enter confirm password:"><br>
+	<span id="error_cpass"></span><br>
+	
+	<label>Phone No:</label><br>
+		<select id="phno">
+			<option>+91</option>
+			<input type="text" name="phno1" id="phno1" placeholder="Enter your phone number:">
+			<br>
+	<span id="error_number"></span><br>
+	<label>Email:</label><br>
+	<input type="text" name="mail" id="mail" placeholder="Enter your email:"><br>
+	<span id="error_mail"></span><br>
+	<label>City:</label><br>
+		<select name="city" id="city">
+		<option>select</option>
+		 <option>AHmedabad</option>
+		 <option>Surat</option>
+		 <option>Gandhinagar</option>
+		<option>Vadodara</option>
+	    </select>
+		<br>
+		<span id="err_city"></span>
+		<br>
+		
+		<label>Pincode:</label><br>
+		<input type="text" name="pincode" id="pincode" placeholder="Enter 6 digit pincode:">
+		<br>
+		<span id="err_pincode"></span><br>
+		<label>Country:</label><br>
+		<input type="text" name="country" id="country" placeholder="INDIA" disabled class="name">
+		<br>
+		<span id="err_country"></span><br>
+		<label>Comment:</label><br>
+		<textarea class="name" id="comment">Optional</textarea>
+		<br>
+		<span id="err_comment"></span><br>
+		<input type="submit" name="submit" value="submit" id="btns">
+		<input type="reset" name="reset" value="reset" id="reset">
+		</form>
+</div>
+</header>
+</body>
+<script type="text/javascript">
+	function validation() {
+	var user=document.getElementById('uname').value;
+	var pass=document.getElementById('pass').value;
+	var cpass=document.getElementById('cpass').value;
+	var mn = document.getElementById('phno1').value;
+	var email=document.getElementById('mail').value;
+	var city1=document.getElementById('city').value;
+	var pin=document.getElementById('pincode').value;
+	if(user=="")
+	{
+
+		document.getElementById('error_name').innerHTML="*Please enter username";
+			return false;
+	}
+	else
+	{
+		 document.getElementById('error_name').innerHTML = "";
+	}
+	if((user.length<3)||(user.length>15))
+	{
+
+		document.getElementById('error_name').innerHTML="*Please enter user name between 3 to 15";
+		return false;
+	}
+	else
+	{
+		 document.getElementById('error_name').innerHTML = "";
+	}
+	if(!(isNaN(user)))
+	{
+		document.getElementById('error_name').innerHTML="*Please enter correct user name";
+		return false;
+	}
+	else
+	{
+		document.getElementById('error_name').innerHTML="";
+	}
+
+	
+
+	if(pass=="")
+	{
+		document.getElementById('error_pass').innerHTML="*Please enter password";
+		return false;
+	}
+	else
+	{
+		 document.getElementById('error_pass').innerHTML = "";
+	}
+
+	if((pass.length<5)||(pass.length>13))
+	{
+		document.getElementById('error_pass').innerHTML="*Please enter user name between 5 to 13";
+		return false;
+	}
+	else if(pass.search(/[0-9]/)==-1)
+	{
+		document.getElementById('error_pass').innerHTML="*Please Enter atleast one number";
+		return false;
+	}
+	else if(pass.search(/[@\!\$\^]/)==-1)
+	{
+		document.getElementById('error_pass').innerHTML="*Please Enter atleast one special letter";
+		return false;
+	}
+	else
+	{
+		document.getElementById('error_pass').innerHTML="";
+	}
+	if(cpass=="")
+	{
+		document.getElementById('error_cpass').innerHTML="*Please enter confirm password";
+		return false;
+	}
+	else
+	{
+	 document.getElementById('error_cpass').innerHTML = "";
+	}
+	
+	if(cpass!=pass)
+	{
+	document.getElementById('error_cpass').innerHTML="*Password and confirm password not match";	
+	return false;
+	}
+	else
+	{
+	document.getElementById("error_cpass").innerHTML = "";
+	}
+
+	if(mn=="")
+	{
+	document.getElementById('error_number').innerHTML = "*Please enter mobile number";
+	return false;
+	}
+	else
+	{
+	document.getElementById('error_number').innerHTML= "";
+	}
+	if(isNaN(mn))
+	{
+	document.getElementById('error_number').innerHTML = "*Please enter only digits";
+	return false;
+	}
+	else
+	{
+		document.getElementById('error_number').innerHTML = "";
+	}
+	if (mn.length != 10)
+	{
+		document.getElementById('error_number').innerHTML = "*Please enter 10 digits";
+		return false;
+	}
+	else
+	{
+	document.getElementById('error_number').innerHTML = "";
+	}
+	if(email=="")
+	{
+		document.getElementById('error_mail').innerHTML="*Please enter email";
+		return false;
+	}
+	else
+	{
+	document.getElementById("error_mail").innerHTML = "";
+	
+	}
+	if(email.indexOf('@')<=0)
+	{
+	document.getElementById('error_mail').innerHTML="*Please enter correct emailid";	
+	return false;
+	}
+	else
+	{
+	document.getElementById("error_mail").innerHTML = "";
+	}
+
+	if((email.charAt(email.length-4)!='.'))
+	{
+	document.getElementById('error_mail').innerHTML="*Please enter correct emailid";	
+	return false;
+	}
+	else
+	{
+	document.getElementById("error_mail").innerHTML = "";
+	}
+	if(city1=="select")
+	{
+		document.getElementById('err_city').innerHTML = "*please select city";
+		return false;
+	}
+	else
+	{
+		document.getElementById('err_city').innerHTML = "";
+	}
+	if(pin=="")
+	{
+		document.getElementById('err_pincode').innerHTML="*Please enter pincode";
+		return false;
+	}
+	else if(pin.length!=6)
+	{
+		document.getElementById('err_pincode').innerHTML = "*Please enter correct pincode";
+		return false;
+	}
+	else if(isNaN(pin))
+	{
+		document.getElementById('err_pincode').innerHTML = "*please enter only 6 digit";
+		return false;
+	}
+	else
+	{
+		document.getElementById('err_pincode').innerHTML = "";
+	}
+}
+</script>
+</html>

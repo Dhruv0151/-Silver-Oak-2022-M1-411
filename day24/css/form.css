@@ -1,0 +1,122 @@
+main
+{
+	height: 40%;
+	width: 50%;
+	text-align: center;
+	padding-left: 15%;
+}
+
+.f1
+{
+	font-size: 15px;
+	font-family:"lucida console";
+	padding-right:70px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background-color: #747170;
+}
+table
+{
+	border: 1px solid black;
+	height: 30%;
+	width: 50%;
+	padding-top: 15px; 
+}
+
+.title h1
+{
+	font-size: 70px;
+	color: #7E2217;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+h1
+{
+	text-align: center;
+	padding: 20px;
+}
+h2
+{
+	text-align: center;
+	padding: 20px;
+}
+body
+{
+	background-image: url(D:\website\img_2.jpg);
+	background-size: 100% 1000px;
+	background-repeat: no-repeat;
+}
+.main
+{
+	background-color: #e8e8e8;
+	width: 500px;
+	margin: 0px 0px 0px 430px;
+	color: white;
+	font-size: 18;
+	padding: 20px;
+	border-radius: 10px;
+}
+#register
+{
+	margin-left: 50px;
+}
+label
+{
+	color: white;
+	font-family: sans-serif;
+	font-size: 18px;
+	font-style: italic;
+}
+#name
+{
+	width: 300px;
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+	padding: 7px;
+
+}#ph
+{
+	width: 60px;
+	padding: 7px;
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+}
+#num
+{
+	width: 230px;
+	padding: 7px;
+	border: none;
+	outline: 0;
+	margin-left: 10px;
+}
+#sub
+{
+	width: 150px; 
+	padding: 7px;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-style: italic;
+	font-weight: 600;
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+}
+#reset
+{
+	width: 150px; 
+	padding: 7px;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-style: italic;
+	font-weight: 600;
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+	margin-left:60px;
+}

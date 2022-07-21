@@ -1,0 +1,177 @@
+<html>
+<head>
+	<title>LogIn Form</title>
+	<style type="text/Css">
+	.
+	{
+		margin:0;
+		padding:0;
+		font-family:Cinzel-Black;
+	}
+	.centerdiv
+	{
+		width:350px;
+		height:450px;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+
+	}
+	img
+	{
+		height:100px;
+		width:100px;
+		margin-left:120px;
+	}
+	#profilepic
+	{
+		height:120px;
+		width:120px;
+		border-radius:90%;
+		position:relative;
+	}
+	h2
+	{
+		text-align:center;
+		color:white;
+		font-size:2em;
+		word-spacing:10px;
+		margin-bottom:50px;
+	}
+	.inputbox
+	{
+		width:300px;
+		height:40px;
+		font-size:20px;
+		display:block;
+		margin:15px;
+		margin-left:20px;
+		padding:10px;
+	}
+	::placeholder
+	{
+		latter-spacing:2px;
+		color:black;
+	}
+	button
+	{
+		width:130px;
+		height:40px;
+		display:block;
+		margin-top:10%;
+		margin-left:30%;
+		font-size:20px;
+		color:white;
+		background-color:#0A84C6;
+		border:none;
+	}
+	.Forgot
+	{
+		width:180px;
+		margin:auto;
+		color:white;
+		font-size:19px;
+		font-weight:bolder;
+		text-align:center;
+		cursor: autofocus;
+		margin-left:160px;
+	}
+	h4
+	{
+		text-align:bottom;
+		margin-bottom:50px;
+		margin-top:5px;
+	}
+	a
+	{
+		color:white;
+	}
+	body
+	{
+		background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(img7.jpg);
+		background-position:center;
+		background-size:cover;
+	}
+	span
+	{
+		color:white;
+		margin-left:15px;
+	}
+	.button
+{
+	position: absolute;
+	top: 8%;
+	left: 5%;
+}
+
+.btn
+{
+	border: 1px solid #fff;
+	padding: 10px 30px;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.6s ease;
+}
+
+.btn:hover
+{
+	background-color: #fff;
+	color: #000;
+}
+	</style>
+</head>
+<body>
+	<div class="button">
+			<a href="index.html" class="btn">Back to home</a>
+		</div>	
+<div class="centerdiv">
+	<img src="3.jpeg" id="profilepic">
+	<h2>LOGIN</h2>
+	<form action="#" onsubmit="return validation()">
+		<input type="text" name="" id="uname" class="inputbox" placeholder="Username"></input>
+		<span id="error_uname"></span>
+		<input type="password" name="pass" id="pwd" class="inputbox" placeholder="Password"></input>
+		<span id="error_pwd"></span>
+		<button type="Submit">LOGIN</button>
+		<br>
+		<div class="Forgot">
+		<h4><a href="ForgatePassword1.html">Forgot Password?</a ></h4>
+		</div>
+	</form>
+	</div>
+</body>
+<script type="text/javascript">
+	function validation()
+	{
+		var user=document.getElementById('uname').value;
+		var pwd1=document.getElementById('pwd').value;
+		
+		if(user=="")
+		{
+			document.getElementById('error_uname').innerHTML="*Please Enter Username";
+			return false;
+		}
+		if(user==document.getElementById('uname').value)
+		{
+			document.getElementById('error_uname').innerHTML="";
+		}
+		if((user.length<3) || (user.length>20))
+		{
+			document.getElementById('error_uname').innerHTML="*Please Enter Username Between 3 to 20";
+			return false;
+		}
+		if(pwd1=="")
+		{
+			document.getElementById('error_pwd').innerHTML="*Please Enter Password";
+			return false;
+		}
+		if((pwd1.length<8)||(pwd1.length>16))
+		{
+			document.getElementById('error_pwd').innerHTML="*Please Enter Password Between 8 to 16";
+			return false;
+		}
+	}
+</script>
+</html>
+

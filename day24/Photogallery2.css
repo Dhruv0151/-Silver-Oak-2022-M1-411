@@ -1,0 +1,59 @@
+		header
+		{
+			font-size:30px;
+			font-family: 'dokdo',cursive;
+			text-align: center;
+		}
+		h1
+		{
+			text-align:center;
+		}
+		main
+		{
+			margin-left:50px;
+		}
+		/*.photo
+		{
+			display:block;
+			width:100%;
+			height:100%;
+			float:right;
+			padding:3px;
+			padding-left:2px;
+		}*/
+
+		.photo
+		{
+			height: 100%;
+			display: block;
+			float: left;
+			padding-left: 20px;
+			padding-bottom: 20px;
+
+		}
+		.g1
+		{
+			display: block;
+			float: left;
+		}
+		.g2
+		{
+			display: block;
+			float: left;
+		}
+		.g3
+		{
+			display: block;
+			float: left;
+		}
+		img
+		{
+			width:300px;
+			border-radius:5px;
+		}
+		img:hover
+		{
+			transform: scale(2,2);
+			transition: .3s transform;	
+		}
+

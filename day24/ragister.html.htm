@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="C:\Users\admin\Desktop\website\css\form.css">
+</head>
+<body>
+	<h1>RAGISTRATION FORM</h1>
+	<div class="main">
+		<h2>Register here</h2>
+		<form method="post" id="register" action="#" onsubmit="return validation()">
+			
+			<table>			    
+				<label>User Name :</label><br>
+				<input type="text" name="uname" id="uname" placeholder="Enyer your name" autofocus><br>
+				<span id="error"></span>
+				<br><br>
+
+				<label>Email :</label><br>
+				<input type="text" name="email" id="email" placeholder="Enter your Email"><br>
+				<span id="error_mail"></span>
+				<br><br>
+
+				<label>Mobile Number :</label><br>
+				<select id="ph">
+					<option>+91</option>
+				</select>	
+				<input type="text" name="mnumber" id="mnumber" placeholder="Enter your phone number"><br>
+				<span id="error_number"></span>
+				<br><br>
+
+				<label>City :</label><br>
+				<select name="city" id="city">
+					<option>Ahmedabad</option>
+					<option>Surat</option>
+					<option>Vadodara</option>
+					<option>Gandhinagar</option>
+				</select>
+				<br>
+				<span id="error_city"></span>
+				<br><br>
+
+		     	<label>pin code :</label><br>
+				<input type="text" name="pcode" id="pcode" maxlength="6" pattern="[0-9]{6,}" placeholder="Enter 6 digit pincode"><br>
+				<span id="error_pin"></span>
+				<br><br>
+
+				<label>Password :</label><br>
+				<input type="Password" name="pass" id="pass" placeholder="Enter New Password"><br>
+				<span id="error_pass"></span>
+				<br><br>
+
+				<label>confirm Password :</label><br>
+				<input type="Password" name="cpass" id="cpass" placeholder="Re Enter New Password">
+				<br>
+				<span id="error_cpass"></span>
+				<br><br>
+
+				<label>Comment :</label><br>
+				<textarea></textarea>
+				<br><br>
+
+				<input type="Submit" name="Submit" id="sub">
+				<input type="Reset" name="Reset" id="reset">
+            </table>
+		</form>
+	</div>
+</body>
+
+<script type="text/javascript">
+	function validation()
+	{
+		var user=document.getElementById('uname').value;
+		var mail=document.getElementById('email').value;
+		var num=document.getElementById('mnumber').value;
+		var pass=document.getElementById('pass').value;
+		var cpass=document.getElementById('cpass').value;
+		var city=document.getElementById('city').value;
+		var pin=document.getElementById('pcode').value;
+
+		if(user=="")
+		{
+			document.getElementById('error').innerHTML="*Please enter username"
+			return false;
+		}
+		else
+		{
+			document.getElementById("error").innerHTML="";
+		}
+		if((user.length<3) || (user.length>20))
+		{
+			document.getElementById('error').innerHTML="*Please enter username between 3 to 20"
+			return false;
+		}
+		else
+		{
+			document.getElementById("error").innerHTML = "";
+		}
+
+		if(mail="")
+		{
+			document.getElementById('error_mail').innerHTML="*Please enter email"
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_mail").innerHTML = "";
+		}
+		if(mail.indexOf('@')<=0)
+		{
+			document.getElementById('error_mail').innerHTML="*Please enter correct emailid";	
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_mail").innerHTML = "";
+		}
+		if((mail.charAt(mail.length-4)!='.'))
+		{
+			document.getElementById('error_mail').innerHTML="*Please enter correct emailid";	
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_mail").innerHTML = "";
+		}
+
+		if(num=="")
+		{
+			document.getElementById('error_number').innerHTML="*Please enter mobile number";
+			return false;
+		}
+		else if(isNaN(num))
+		{
+			document.getElementById('error_number').innerHTML="*Please enter only digits";
+ 		}
+		else if (num.length != 10)
+		{
+			document.getElementById('error_number').innerHTML="*Please enter 10 digits";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_number").innerHTML="";
+		}
+	
+
+		if(city=="")
+		{
+			document.getElementById('error_city').innerHTML="*Please select any city name"
+			return false;
+		}
+			else
+		{
+			document.getElementById("error_city").innerHTML="";
+		}
+
+		if(pin=="")
+		{
+			document.getElementById('error_pin').innerHTML="*Please enter pin code"
+			return false;
+		}
+		else if(isNaN(pin))
+		{
+			document.getElementById('error_pin').innerHTML="*Please enter only digits";
+ 		}
+ 		else if (pin.length != 6)
+		{
+			document.getElementById('error_pin').innerHTML="*Please enter 6 digits";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_pin").innerHTML="";
+		}
+
+
+		if(pass=="")
+		{
+			document.getElementById('error_pass').innerHTML="*Please enter Password"
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_pass").innerHTML = "";
+		}
+		if((pass.length<5) || (pass.length>20))
+		{
+			document.getElementById('error_pass').innerHTML="*Please enter username between 5 to 20"
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_pass").innerHTML = "";
+		}
+
+		if(cpass=="")
+		{
+			document.getElementById('error_pass').innerHTML="*Please enter confirm Password"
+			return false;
+		}
+		else
+		{
+			document.getElementById("error_cpass").innerHTML = "";
+		}
+	
+		if(cpass!=pass)
+		{
+			document.getElementById('error_cpass').innerHTML="*Password and confirm password not match";	
+			return false;	
+		}
+		else
+		{
+			document.getElementById("error_cpass").innerHTML = "";
+		}
+
+	}
+</script>
+</html>
